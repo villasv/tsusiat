@@ -4,7 +4,12 @@ version = "0.0.0"
 description = "Waterfall-style project management, split in two by a rock."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+  "typer>=0.21.0",
+]
+
+[project.scripts]
+tsusiat = "tsusiat.cli:app"
 
 [build-system]
 requires = ["hatchling>=1.28.0"]
