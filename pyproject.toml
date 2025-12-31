@@ -1,0 +1,14 @@
+[project]
+name = "tsusiat"
+version = "0.0.0"
+description = "Waterfall-style project management, split in two by a rock."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[build-system]
+requires = ["hatchling>=1.28.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tsusiat"]
