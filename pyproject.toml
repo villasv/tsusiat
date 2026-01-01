@@ -17,3 +17,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tsusiat"]
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest>=8.0",
+]
