@@ -1,4 +1,5 @@
 import typer
+
 from tsusiat.utils.cli_extras import VERSION_OPTION
 
 app = typer.Typer(add_completion=False)

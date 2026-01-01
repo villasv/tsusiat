@@ -21,4 +21,18 @@ packages = ["src/tsusiat"]
 [tool.hatch.envs.default]
 dependencies = [
   "pytest>=8.0",
+  "pytest-cov>=7.0",
+  "ruff>=0.14",
 ]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

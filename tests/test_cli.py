@@ -1,5 +1,6 @@
 import re
 from importlib.metadata import version as pkg_version
+
 from typer.testing import CliRunner
 
 from tsusiat.cli import app
