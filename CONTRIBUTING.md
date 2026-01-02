@@ -17,16 +17,21 @@ This project uses **Hatch** for environments and publishing.
 
 ## Quality
 
+- Format:
+  - `hatch fmt`
+
 - Lint:
   - `hatch run ruff check .`
-
-- Format:
-  - `hatch run ruff format .`
 
 ## Tests
 
 - Run tests with coverage:
   - `hatch run pytest -q --cov=tsusiat --cov-report=term-missing`
+
+## All checks
+
+- Format + lint + tests (with coverage) + package build:
+  - `hatch run ci`
 
 ## Builds
 

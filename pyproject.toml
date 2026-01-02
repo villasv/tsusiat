@@ -25,6 +25,12 @@ dependencies = [
   "ruff>=0.14",
 ]
 
+[tool.hatch.envs.default.scripts]
+ci = "hatch fmt && ruff check . && pytest -q --cov=tsusiat --cov-report=term-missing && hatch build"
+
+[tool.hatch.format]
+formatter = "ruff"
+
 [tool.ruff]
 line-length = 88
 target-version = "py314"
