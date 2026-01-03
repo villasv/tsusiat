@@ -23,6 +23,7 @@ dependencies = [
   "pytest>=8.0",
   "pytest-cov>=7.0",
   "ruff>=0.14",
+  "pre-commit>=4.0",
 ]
 
 [tool.hatch.envs.default.scripts]
