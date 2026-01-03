@@ -3,15 +3,8 @@ import importlib.metadata as importlib_metadata
 import typer
 
 
-def _print_version(value: bool) -> None:
-    if not value:
-        return
-
-    try:
-        v = importlib_metadata.version("tsusiat")
-    except importlib_metadata.PackageNotFoundError:
-        v = "unknown"
-
+def _print_version(_: bool) -> None:
+    v = importlib_metadata.version("tsusiat")
     typer.echo(f"tsusiat {v}")
     raise typer.Exit()
 

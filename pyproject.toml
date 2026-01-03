@@ -32,8 +32,9 @@ ci = "hatch fmt && ruff check . && pytest -q --cov=tsusiat --cov-report=term-mis
 formatter = "ruff"
 
 [tool.ruff]
-line-length = 88
+line-length = 100
 target-version = "py314"
+preview = true
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
