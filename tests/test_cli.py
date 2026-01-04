@@ -12,7 +12,8 @@ def test_help_flag() -> None:
     assert result.exit_code == 0
 
     def _normalize(text: str) -> str:
-        no_spacing = re.sub(r" +", " ", text)
+        no_style = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", text)
+        no_spacing = re.sub(r" +", " ", no_style)
         no_trailing = re.sub(r" +\n", "\n", no_spacing)
         no_leading = re.sub(r"\n\s+", "\n", no_trailing)
         return no_leading
