@@ -7,6 +7,6 @@ app = typer.Typer(add_completion=False)
 
 @app.callback()
 def main(
-    version: bool = VERSION_OPTION,
+    _: bool = VERSION_OPTION,
 ) -> None:
     """tsusiat: project timeline scheduling."""

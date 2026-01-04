@@ -1,22 +1,20 @@
 from datetime import date
 
-from tsusiat.planning.task import Task, TaskId
+from tsusiat.project.task import Task, TaskId
+from tsusiat.project.workstream import Workstream
 
 
-def large_project_tasks() -> list[Task]:
+def large_project_tasks() -> Workstream:
     one_day_effort = 6
     two_days_effort = 12
     three_days_effort = 18
     five_days_effort = 30
-
-    in_four_months = date(2024, 4, 1)
     in_eight_months = date(2024, 6, 1)
 
     dev_epic_id = TaskId("TASK-001")
     development_epic = Task(
         id=dev_epic_id,
         title="[Task Manager] Development Phase",
-        goal_date=in_four_months,
         subtasks=[
             Task(
                 id=TaskId(f"{dev_epic_id}A"),
@@ -227,7 +225,7 @@ def large_project_tasks() -> list[Task]:
                 estimated_effort_hours=five_days_effort,
             ),
             Task(
-                id=TaskId(f"{load_epic_id}D"),
+                id=TaskId(f"{chaos_epic_id}D"),
                 title="[Task Manager] Monitoring Fixes & Exercise Repeat Buffer",
                 dependencies=[TaskId(f"{chaos_epic_id}C")],
                 estimated_effort_hours=five_days_effort * 2,
@@ -302,8 +300,7 @@ def large_project_tasks() -> list[Task]:
             chaos_testing_epic,
             compliance_review_epic,
             launch_epic,
-            follow_up_epic,
         ],
     )
 
-    return [project_goal]
+    return Workstream([project_goal, follow_up_epic])

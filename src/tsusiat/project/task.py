@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from datetime import date, datetime
 from typing import NewType
 
@@ -19,7 +17,8 @@ class Task:
         fixed_duration_days: int | None = None,
         estimated_effort_hours: int | None = None,
         # Target
-        goal_date: date | None = None,
+        goal_date: date | None = None,  # individual task own target, usually milestones
+        need_by_date: date | None = None,  # derive from dependency goal / need by dates
         # Timing fields
         projected_initiation_datetime: datetime | None = None,
         projected_completion_datetime: datetime | None = None,
@@ -40,6 +39,7 @@ class Task:
         self.estimated_effort_hours = estimated_effort_hours
 
         self.goal_date = goal_date
+        self.need_by_date = need_by_date
 
         if projected_initiation_datetime and projected_completion_datetime:
             if projected_completion_datetime < projected_initiation_datetime:
