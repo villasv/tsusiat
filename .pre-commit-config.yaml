@@ -1,6 +1,4 @@
-# See https://pre-commit.com
 # Runs the project's CI script (format, lint, tests, build) before allowing a commit.
-
 repos:
   - repo: local
     hooks:
